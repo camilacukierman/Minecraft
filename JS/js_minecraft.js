@@ -100,7 +100,7 @@ minecraft.checkIfValidSelection = function () {
         $('#currentbox').addClass("earth");
         minecraft.savedTile = "earth"
     }
-        // putting value in the taken tile
+    // putting value in the taken tile
     else if ($('.tool.selected').attr("id") == "currentbox" && minecraft.savedTile != "") {
         clickedTile.removeClass().addClass(minecraft.savedTile).addClass("box");
         $('.selected').removeClass();
@@ -108,7 +108,7 @@ minecraft.checkIfValidSelection = function () {
         minecraft.savedTile = "";
     }
 
-        //error message
+    //error message
     else {
         $(".tool.selected").addClass("error");
         setTimeout(function () {
@@ -117,7 +117,7 @@ minecraft.checkIfValidSelection = function () {
 
     }
 };
-
+//calling the function
 minecraft.init();
 
 
