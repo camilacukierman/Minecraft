@@ -1,7 +1,7 @@
 .board{
     border: solid 1px transparent;
-    height: 1030px;
-    width: 1030px;
+    /*height: 1030px;*/
+    /*width: 1030px;*/
     display: inline-block;
     margin-top: 50px;
     padding: 0 0;
@@ -75,12 +75,16 @@
 }
 
 #popup {
-
-    display: absolute;
-    font-size: 50px;
-    background-size: cover;
     background-position: center;
     text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 12222;
+    display:block;
 
 }
 
@@ -91,6 +95,3 @@
 
 }
 
-.popupOff{
-    display: none;
-}
