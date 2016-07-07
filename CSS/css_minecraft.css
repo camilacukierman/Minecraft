@@ -1,0 +1,72 @@
+.board{
+    border: solid 1px transparent;
+    height: 1030px;
+    width: 1030px;
+    display: inline-block;
+    margin-top: 50px;
+    padding: 0 0;
+}
+
+.box{
+    border: solid 1px transparent;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    margin: -3px;
+}
+
+.sky {
+    background-color: lightskyblue;
+}
+
+.tree {
+    background-image: url('../PIC/tree.png');
+}
+
+.earth{
+    background-image: url('../PIC/dirt.png');
+}
+
+.leaf{
+    background-image: url('../PIC/leaf.png');
+}
+
+.rock{
+    background-image: url('../PIC/rock.png');
+}
+
+.title{
+   height: 100px;
+    margin-left: 900px;
+}
+
+
+.tools{
+    height: 200px;
+    width: 200px;
+    background-color: grey;
+    margin-right: 100px;
+    margin-top: 30px;
+    border: 1px black solid;
+    text-align: center;
+}
+
+.imgtools{
+    height: 100px;
+    width: auto;
+}
+
+.texttool{
+    font-family: Arial;
+    font-size: 32px
+}
+.currentbackground{
+}
+
+.blue{
+    background-color: lightskyblue;
+}
+
+.red {
+    background-color: indianred;
+}
