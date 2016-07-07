@@ -9,8 +9,8 @@
 
 .box{
     border: solid 1px transparent;
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     display: inline-block;
     margin: -3px;
 }
@@ -37,13 +37,13 @@
 
 .title{
    height: 100px;
-    margin-left: 900px;
+    margin-left: 500px;
 }
 
 
 .tool{
-    height: 200px;
-    width: 200px;
+    height: 50px;
+    width: 50px;
     background-color: grey;
     margin-right: 100px;
     margin-top: 30px;
@@ -52,25 +52,25 @@
 }
 
 .imgtools{
-    height: 100px;
+    height: 15px;
     width: auto;
 }
 
 .texttool{
     font-family: Arial;
-    font-size: 32px
+    font-size: 10px;
 }
 .currentbackground{
 }
 
-.blue{
-    background-color: lightskyblue;
+
+.tool.selected {
+    border: 1px solid dodgerblue;
+    background-color: dodgerblue;
 }
 
-.red {
-    background-color: indianred;
-}
-
-.tool.selected{
+.tool.error{
     border: 1px solid red;
+    background-color: red;
+
 }
