@@ -5,6 +5,13 @@
 
 var minecraft = {};
 
+
+minecraft.startGame = function(){
+    $('#popup').addClass(popupOff)
+};
+
+
+
 minecraft.tileCodes = {"0": "sky", "1": "earth", "2": "leaf", "3": "tree", "4": "rock"};
 
 minecraft.init = function () {
@@ -62,7 +69,7 @@ minecraft.checkIfValidSelection = function () {
     }
 
     // id axe can select class leaf
-    if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("leaf")) {
+    else if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("leaf")) {
         clickedTile.removeClass("leaf").addClass("sky");
         $ ('#currentbox').removeClass("rock sky leaf earth tree");
         $('#currentbox').addClass("leaf");
@@ -92,13 +99,28 @@ minecraft.checkIfValidSelection = function () {
     };
 
 
-/*minecraft.userTile = function () {
-    var currentTile = $(this);
 
-    $('#currentbox').hasClass("tree")
+minecraft.userTile = function () {
 
-}*/
+    var currentBox = $(this);
+    
+    if ($('#currentbox).hasClass("rock sky leaf earth tree"){
 
+
+           }
+};
+
+//
+// if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("tree")) {
+//     clickedTile.removeClass("tree").addClass("sky");
+//     $ ('#currentbox').removeClass("rock sky leaf earth tree");
+//     $('#currentbox').addClass("tree");
+// }
+
+
+
+minecraft.startGame();
 minecraft.init();
+
 
 

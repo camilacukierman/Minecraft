@@ -72,5 +72,25 @@
 .tool.error{
     border: 1px solid red;
     background-color: red;
+}
 
+#popup {
+
+    display: absolute;
+    font-size: 50px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+}
+
+.msg {
+    font-family: Arial;
+    font-size: 16px;
+    color: deeppink;
+
+}
+
+.popupOff{
+    display: none;
 }
