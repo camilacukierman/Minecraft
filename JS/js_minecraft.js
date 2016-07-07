@@ -2,18 +2,19 @@
  * Created by itc_user on 7/6/2016.
  */
 
-
+// creating the nameSpace
 var minecraft = {};
 minecraft.savedTile = "";
 
-minecraft.startGame = function(){
+//popup - taking out the landing sapce and beguiing the game
+minecraft.startGame = function () {
     $('#popup').fadeOut();
 };
 
-
-
+//subsititute the numbers to the rigth tile
 minecraft.tileCodes = {"0": "sky", "1": "earth", "2": "leaf", "3": "tree", "4": "rock"};
 
+// calling the fuction to start the game (the board, and the play button
 minecraft.init = function () {
     $(document).ready(function () {
         minecraft.creatBoard();
@@ -21,12 +22,13 @@ minecraft.init = function () {
             $(".tool.selected").removeClass("selected");
             $(this).addClass("selected");
         });
-        $("#play-btn").click(function(){
+        $("#play-btn").click(function () {
             minecraft.startGame();
         })
     });
 };
 
+//creating the board
 minecraft.creatBoard = function () {
 
     minecraft.matrix = [
@@ -58,6 +60,7 @@ minecraft.creatBoard = function () {
     }
 };
 
+//playing
 
 minecraft.checkIfValidSelection = function () {
     // check if proper tools are being used to select the proper boxes
@@ -67,7 +70,7 @@ minecraft.checkIfValidSelection = function () {
     // id axe can select class tree
     if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("tree")) {
         clickedTile.removeClass("tree").addClass("sky");
-        $ ('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree");
         $('#currentbox').addClass("tree");
         minecraft.savedTile = "tree"
     }
@@ -75,7 +78,7 @@ minecraft.checkIfValidSelection = function () {
     // id axe can select class leaf
     else if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("leaf")) {
         clickedTile.removeClass("leaf").addClass("sky");
-        $ ('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree");
         $('#currentbox').addClass("leaf");
         minecraft.savedTile = "leaf"
     }
@@ -84,26 +87,28 @@ minecraft.checkIfValidSelection = function () {
 
     else if ($('.tool.selected').attr("id") == "pickaxe" && clickedTile.hasClass("rock")) {
         clickedTile.removeClass("rock").addClass("sky");
-        $ ('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree");
         $('#currentbox').addClass("rock");
         minecraft.savedTile = "rock"
     }
+
     // id shovel can select class 1
 
-   else if ($('.tool.selected').attr("id") == "shovel" && clickedTile.hasClass("earth")) {
+    else if ($('.tool.selected').attr("id") == "shovel" && clickedTile.hasClass("earth")) {
         clickedTile.removeClass("earth").addClass("sky");
-        $ ('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree");
         $('#currentbox').addClass("earth");
         minecraft.savedTile = "earth"
     }
-
-
-    else if ($('.tool.selected').attr("id") == "currentbox"){
+        // putting value in the taken tile
+    else if ($('.tool.selected').attr("id") == "currentbox" && minecraft.savedTile != "") {
         clickedTile.removeClass().addClass(minecraft.savedTile).addClass("box");
-
+        $('.selected').removeClass();
+        $('#currentbox').addClass("tool");
+        minecraft.savedTile = "";
     }
-        
-        
+
+        //error message
     else {
         $(".tool.selected").addClass("error");
         setTimeout(function () {
@@ -111,22 +116,8 @@ minecraft.checkIfValidSelection = function () {
         }, 500)
 
     }
-    };
+};
 
-
-
-
-
-//
-// if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("tree")) {
-//     clickedTile.removeClass("tree").addClass("sky");
-//     $ ('#currentbox').removeClass("rock sky leaf earth tree");
-//     $('#currentbox').addClass("tree");
-// }
-
-
-
-// minecraft.startGame();
 minecraft.init();
 
 
