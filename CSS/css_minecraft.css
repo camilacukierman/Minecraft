@@ -41,7 +41,7 @@
 }
 
 
-.tools{
+.tool{
     height: 200px;
     width: 200px;
     background-color: grey;
@@ -69,4 +69,8 @@
 
 .red {
     background-color: indianred;
+}
+
+.tool.selected{
+    border: 1px solid red;
 }
