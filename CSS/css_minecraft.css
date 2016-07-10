@@ -16,7 +16,10 @@
 }
 
 .sky {
-    background-color: #facaca;
+    background-color:lightskyblue;
+}
+.sand {
+    background-color:navajowhite;
 }
 
 .tree {
@@ -34,9 +37,13 @@
 .rock{
     background-image: url('../PIC/rock.png');
 }
+.cloud{
+    background-image: url('../PIC/white.png');
+}
+.worm{
+    background-image: url('../PIC/worm.png');
 
-.gaiola{
-    background-image: url('../PIC/gaiola.png');
+
 }
 
 .title{

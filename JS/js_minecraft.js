@@ -12,7 +12,7 @@ minecraft.startGame = function () {
 };
 
 //subsititute the numbers to the rigth tile
-minecraft.tileCodes = {"0": "sky", "1": "earth", "2": "leaf", "3": "tree", "4": "rock"};
+minecraft.tileCodes = {"0": "sky", "1": "earth", "2": "leaf", "3": "tree", "4": "rock", "5": "cloud", "6": "worm"};
 
 // calling the fuction to start the game (the board, and the play button
 minecraft.init = function () {
@@ -32,12 +32,12 @@ minecraft.init = function () {
 minecraft.creatBoard = function () {
 
     minecraft.matrix = [
-        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-        ["0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "5", "5", "5", "5", "0", "0", "0", "0"],
+        ["0", "0", "0", "5", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+        ["0", "5", "5", "5", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "5", "5", "0", "0", "0", "0", "0", "0", "0", "0", "0", "5", "5", "5", "0", "0", "0"],
+        ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "5", "5", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "5", "5", "5", "5", "5", "5"],
+        ["0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "5", "5", "5", "5", "5"],
         ["0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
         ["0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
         ["0", "0", "0", "0", "0", "0", "0", "3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "2", "2", "2", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
@@ -45,10 +45,10 @@ minecraft.creatBoard = function () {
         ["0", "0", "0", "0", "0", "0", "0", "3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "2", "4", "4"],
         ["0", "0", "4", "0", "0", "0", "0", "3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "4", "4", "4"],
         ["0", "0", "4", "4", "0", "0", "4", "3", "4", "0", "0", "0", "0", "0", "0", "0", "0", "0", "3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "4", "4", "4", "4", "4"],
-        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
-        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
-        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
-        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
+        ["6", "6", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
+        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "6"],
+        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "6", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
+        ["1", "1", "1", "1", "1", "1", "1", "1", "1", "6", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"],
         ["4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4"]
     ];
     for (var i = 0; i < minecraft.matrix.length; i++) {
@@ -70,7 +70,7 @@ minecraft.checkIfValidSelection = function () {
     // id axe can select class tree
     if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("tree")) {
         clickedTile.removeClass("tree").addClass("sky");
-        $('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree cloud worm");
         $('#currentbox').addClass("tree");
         minecraft.savedTile = "tree"
     }
@@ -78,7 +78,7 @@ minecraft.checkIfValidSelection = function () {
     // id axe can select class leaf
     else if ($('.tool.selected').attr("id") == "axe" && clickedTile.hasClass("leaf")) {
         clickedTile.removeClass("leaf").addClass("sky");
-        $('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree cloud worm");
         $('#currentbox').addClass("leaf");
         minecraft.savedTile = "leaf"
     }
@@ -87,7 +87,7 @@ minecraft.checkIfValidSelection = function () {
 
     else if ($('.tool.selected').attr("id") == "pickaxe" && clickedTile.hasClass("rock")) {
         clickedTile.removeClass("rock").addClass("sky");
-        $('#currentbox').removeClass("rock sky leaf earth tree");
+        $('#currentbox').removeClass("rock sky leaf earth tree cloud worm");
         $('#currentbox').addClass("rock");
         minecraft.savedTile = "rock"
     }
@@ -95,11 +95,29 @@ minecraft.checkIfValidSelection = function () {
     // id shovel can select class 1
 
     else if ($('.tool.selected').attr("id") == "shovel" && clickedTile.hasClass("earth")) {
-        clickedTile.removeClass("earth").addClass("sky");
-        $('#currentbox').removeClass("rock sky leaf earth tree");
+        clickedTile.removeClass("earth").addClass("sand");
+        $('#currentbox').removeClass("rock sky leaf earth tree cloud worm");
         $('#currentbox').addClass("earth");
         minecraft.savedTile = "earth"
     }
+    // id wind can select class clouf
+
+    else if ($('.tool.selected').attr("id") == "wind" && clickedTile.hasClass("cloud")) {
+        clickedTile.removeClass("cloud").addClass("sky");
+        $('#currentbox').removeClass("rock sky leaf earth tree cloud worm");
+        $('#currentbox').addClass("cloud");
+        minecraft.savedTile = "cloud"
+    }
+
+    // id wind can select class clouf
+
+    else if ($('.tool.selected').attr("id") == "bug" && clickedTile.hasClass("worm")) {
+        clickedTile.removeClass("worm").addClass("sand");
+        $('#currentbox').removeClass("rock sky leaf earth tree cloud worm");
+        $('#currentbox').addClass("worm")
+        minecraft.savedTile = "worm";
+    }
+
     // putting value in the taken tile
     else if ($('.tool.selected').attr("id") == "currentbox" && minecraft.savedTile != "") {
         clickedTile.removeClass().addClass(minecraft.savedTile).addClass("box");
