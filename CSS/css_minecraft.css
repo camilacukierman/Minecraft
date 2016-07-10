@@ -35,6 +35,10 @@
     background-image: url('../PIC/rock.png');
 }
 
+.gaiola{
+    background-image: url('../PIC/gaiola.png');
+}
+
 .title{
    height: 100px;
     margin-left: 500px;
